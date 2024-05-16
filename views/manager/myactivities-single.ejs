@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<%- include('../partials/head') %>
+
+    <body>
+        <%- include('../partials/header') %>
+            <%- include('../partials/manager-sidebar') %>
+
+                <main id="main" class="main">
+                    <div class="pagetitle">
+                        <h1><%= activity.name %></h1>
+                        <nav>
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item"><a href="/manager/dashboard">Home</a></li>
+                                <li class="breadcrumb-item"><a href="#">Management</a></li>
+                                <li class="breadcrumb-item"><a href="/manager/myactivities">My Activities</a></li>
+                                <li class="breadcrumb-item active"><%= activity.name %></li>
+                            </ol>
+                        </nav>
+                        <div class="card">
+                            <div class="card-header d-flex">
+                                <div class="col-xxl-11">
+                                    <h2><%= activity.name %></h2>
+                                </div>
+                                <div class="col-xxl-1">
+                                    <a href="#edit-activity" data-bs-toggle="modal"><button
+                                            class="btn btn-primary">Edit</button></a>
+                                    <a href="#delete-activity" data-bs-toggle="modal"><button class="btn btn-danger"><i
+                                                class="bi bi-trash"></i></button></a>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <div class="mb-3 mt-3">
+                                    <div class="row g-0">
+                                        <div class="col-md-4 single-club">
+                                            <img src="../assets/img/activity/<%= activity.image %>" class="img-fluid rounded-start" alt="...">
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="card-body">
+                                                <h5 class="card-title">About</h5>
+                                                <p class="card-text"><%= activity.about %></p>
+                                                <br><br>
+                                                <h5><b>Event Date and Time</b></h5>
+                                                <p><%= activity.date %></p>
+                                                <h5><b>Place</b></h5>
+                                                <p><%= activity.place %></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    </div>
+                    </div>
+                    </div>
+                    </div>
+                    </div>
+                    </div>
+                </main>
+
+                <%- include('../partials/manager-modal-activity') %>
+                        <%- include('../partials/footer') %>
+                            <%- include('../partials/script') %>
+    </body>
+
+    </html>

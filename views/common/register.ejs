@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<%- include('../partials/head') %>
+
+    <body>
+        <section class="section register min-vh-100 d-flex flex-column align-items-center justify-content-center py-4">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-4 col-md-6 d-flex flex-column align-items-center justify-content-center">
+                        <div class="d-flex justify-content-center py-4">
+                            <a href="/register" class="logo d-flex align-items-center w-auto">
+                                <img src="../assets/img/logo.png" alt="">
+                            </a>
+                        </div>
+                        <div class="card mb-3">
+                            <div class="card-body">
+
+                                <div class="pt-4 pb-2">
+                                    <h5 class="card-title text-center pb-0 fs-4">Student Registration</h5>
+                                    <p class="text-center small"><br>Enter your student details to register the system.
+                                        <br><br>
+                                        <i>
+                                            Club Managers cannot register online. They have to contact with Uskudar
+                                            University Department of Health, Culture,
+                                            and Sports. <br><br></i>
+                                    </p>
+                                </div>
+
+                                <form class="row g-3 needs-validation" method="post">
+                                    <div class="col-12">
+                                        <label for="name" class="form-label">Name Surname:</label>
+                                        <input type="name" name="name" class="form-control" id="name" required>
+                                    </div>
+                                    <div class="col-12">
+                                        <label for="id" class="form-label">Student ID:</label>
+                                        <div class="input-group has-validation">
+                                            <span class="input-group-text" id="inputGroupPrepend">#</span>
+                                            <input type="id" name="id" class="form-control" id="id" required>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="col-12">
+                                        <label for="department" class="form-label">Department:</label>
+                                        <div class="input-group has-validation">
+                                            <input type="department" name="department" class="form-control" id="id" required>
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <label for="year" class="form-label">Student Grade:</label>
+                                        <div class="input-group has-validation">
+                                            <input type="year" name="year" class="form-control" id="year" required>
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <label for="email" class="form-label">Student Email:</label>
+                                        <input type="email" name="email" class="form-control" id="email" required>
+                                    </div>
+                                    <div class="col-12">
+                                        <label for="password" class="form-label">Password:</label>
+                                        <input type="password" name="password" class="form-control" id="password" required>
+                                    </div>
+                                    <div class="col-4">
+                                        <button class="btn btn-primary w-100" type="submit">Register</button>
+                                    </div>
+                                    <div class="col-8">
+                                        <div class="link-login">
+                                            <p class="small mb-0">Already have an account? <a href="/">Log
+                                                    in</a></p>
+                                        </div>
+                                    </div>
+                                </form>
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <%- include('../partials/script') %>
+    </body>
+
+    </html>

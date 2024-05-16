@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<%- include('../partials/head') %>
+
+    <body>
+        <%- include('../partials/header') %>
+            <%- include('../partials/manager-sidebar') %>
+
+                <main id="main" class="main">
+                    <div class="pagetitle">
+                        <h1>Dashboard</h1>
+                        <nav>
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item"><a href="/manager/dashboard">Home</a></li>
+                            </ol>
+                        </nav>
+                    </div>
+                    <section class="section dashboard">
+                        <div class="row">
+                            <div class="col-lg-7">
+                                <div class="row">
+                                    <div class="col-xxl-4 col-md-6">
+                                        <div class="card info-card card1">
+                                            <div class="card-body">
+                                                <h5 class="card-title">Requested Activities</h5>
+                                                <div class="d-flex align-items-center">
+                                                    <div
+                                                        class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                                                        <i class="bi bi-calendar-check-fill"></i>
+                                                    </div>
+                                                    <div class="ps-3">
+                                                        <h6><%= countActivity %></h6>
+                                                        <span>Activities</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-xxl-4 col-md-6">
+                                        <div class="card info-card card1">
+                                            <div class="card-body">
+                                                <h5 class="card-title">Announced Activities</h5>
+                                                <div class="d-flex align-items-center">
+                                                    <div
+                                                        class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                                                        <i class="bi bi-megaphone-fill"></i>
+                                                    </div>
+                                                    <div class="ps-3">
+                                                        <h6><%= countAnnouncement %></h6>
+                                                        <span>Activities</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-xxl-4 col-md-6">
+                                        <div class="card info-card card1">
+                                            <div class="card-body">
+                                                <h5 class="card-title">Notifications</h5>
+                                                <div class="d-flex align-items-center">
+                                                    <div
+                                                        class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                                                        <i class="bi bi-bell-fill"></i>
+                                                    </div>
+                                                    <div class="ps-3">
+                                                        <h6><%= countNotifications %></h6>
+                                                        <span>Notifications</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="card recent-sales overflow-auto">
+                                           <div class="card-body">
+                                              <h5 class="card-title">Latest Requests</h5>
+                                              <table class="table table-borderless">
+                                                 <thead>
+                                                    <tr>
+                                                       <th scope="col">From</th>
+                                                       <th scope="col">Title</th>
+                                                       <th scope="col">Details</th>
+                                                       <th scope="col">Result</th>
+                                                       <th scope="col">Status</th>
+                                                    </tr>
+                                                 </thead>
+                                                 <tbody>
+                                                    <% notificationList.forEach(notificationList => { %>
+                                                       <tr>
+                                                          <td><%= notificationList.from.club.name %></td>
+                                                          <td><%= notificationList.title %></td>
+                                                          <td><%= notificationList.detail %></td>
+                                                          <td><%= notificationList.request %></td>
+                                                          <% if (notificationList.status=="Approved") { %>
+                                                             <td><span class="badge bg-success">Approved</span></td>
+                                                         <% }  else if(notificationList.status=="Rejected") { %>
+                                                             <td><span class="badge bg-danger">Rejected</span></td>
+                                                         <% }  else { %>
+                                                             <td><a href="#"><span class="badge bg-warning">Pending</span></a></td>
+                                                         <% } %> 
+                                                       </tr>
+                                                    <% }) %>
+                                                 </tbody>
+                                              </table>
+                                           </div>
+                                        </div>
+                                     </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-5">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Club Activities</h5>
+                                        <div class="activity">
+                                            <% activity.forEach(activity => { %>
+                                                <div class="activity-item d-flex">
+                                                    <i class='bi bi-circle-fill activity-badge align-self-start'
+                                                        style="color: #09B3AD;"></i>
+                                                    <div class="activite-label"><b><%= activity.date %></b></div>
+                                                    <div class="activity-content">
+                                                        <i><%= activity.name %></i>
+                                                    </div>
+                                                </div>
+                                            <% }) %>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                    </section>
+                </main>
+
+                <%- include('../partials/manager-modal') %>
+                    <%- include('../partials/footer') %>
+                        <%- include('../partials/script') %>
+    </body>
+    </html>

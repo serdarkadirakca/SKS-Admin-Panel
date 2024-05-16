@@ -1,0 +1,70 @@
+<aside id="sidebar" class="sidebar">
+   <ul class="sidebar-nav" id="sidebar-nav">
+      <% if(typeof notCollapsed!='undefined' && notCollapsed=="admin-dashboard" ){ %>
+         <li class="nav-item">
+            <a class="nav-link" href="/admin/dashboard">
+               <i class="bi bi-grid-fill"></i>
+               <span>Dashboard</span>
+            </a>
+         </li>
+         <% } else{ %>
+            <li class="nav-item">
+               <a class="nav-link collapsed" href="/admin/dashboard">
+                  <i class="bi bi-grid-fill"></i>
+                  <span>Dashboard</span>
+               </a>
+            </li>
+            <% } %>
+
+               <% if(typeof notCollapsed!='undefined' && (notCollapsed=="admin-clubs" ||
+                  notCollapsed=="admin-club-single" ) ){ %>
+                  <li class="nav-item">
+                     <a class="nav-link" href="/admin/clubs">
+                        <i class="bi bi-people-fill"></i>
+                        <span>Clubs</span>
+                     </a>
+                  </li>
+                  <% } else{ %>
+                     <li class="nav-item">
+                        <a class="nav-link collapsed" href="/admin/clubs">
+                           <i class="bi bi-people-fill"></i>
+                           <span>Clubs</span>
+                        </a>
+                     </li>
+                     <% } %>
+
+                        <% if(typeof notCollapsed!='undefined' && (notCollapsed=="admin-activities" ||
+                           notCollapsed=="admin-activity-single" ) ){ %>
+                           <li class="nav-item">
+                              <a class="nav-link" href="/admin/activities">
+                                 <i class="bi bi-calendar-check-fill"></i>
+                                 <span>Activities</span>
+                              </a>
+                           </li>
+                           <% } else{ %>
+                              <li class="nav-item">
+                                 <a class="nav-link collapsed" href="/admin/activities">
+                                    <i class="bi bi-calendar-check-fill"></i>
+                                    <span>Activities</span>
+                                 </a>
+                              </li>
+                              <% } %>
+
+                                 <% if(typeof notCollapsed!='undefined' && notCollapsed=="admin-notifications" ){ %>
+                                    <li class="nav-item">
+                                       <a class="nav-link" href="/admin/notifications">
+                                          <i class="bi bi-info-circle-fill"></i>
+                                          <span>Requests</span>
+                                       </a>
+                                    </li>
+                                    <% } else{ %>
+                                       <li class="nav-item">
+                                          <a class="nav-link collapsed" href="/admin/notifications">
+                                             <i class="bi bi-info-circle-fill"></i>
+                                             <span>Requests</span>
+                                          </a>
+                                       </li>
+                                       <% } %>
+
+   </ul>
+</aside>

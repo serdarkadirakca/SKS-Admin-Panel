@@ -1,0 +1,79 @@
+<div class="modal signout" id="logout" tabindex="-1">
+   <div class="modal-dialog">
+      <div class="modal-content">
+         <div class="modal-body">
+            <h5>Are you sure to logout?</h5>
+         </div>
+         <div class="modal-footer">
+            <a href="/logout"><button type="button" class="btn btn-primary">Yes</button></a>
+            <button type="button" class="btn btn-primary" data-bs-dismiss="modal">No</button>
+         </div>
+      </div>
+   </div>
+</div>
+
+<div class="modal edit-club" id="edit-club" tabindex="-1">
+    <div class="modal-dialog">
+       <div class="modal-content">
+          <div class="modal-body">
+             <h5 style="text-align: center;"><b>Edit Club</b></h5>
+          </div>
+          <div class="modal-footer">
+             <form class="row g-3" method="post" enctype="multipart/form-data">
+                <div class="col-12">
+                   <label for="name" class="form-label">Club Name:</label>
+                   <input type="name" class="form-control" id="name" name="name" placeholder="<%= club.name %>">
+                </div>
+                <div class="col-12">
+                   <label for="president" class="form-label">President Name:</label>
+                   <input type="president" class="form-control" id="president" name="president" placeholder="<%= club.president %>">
+                </div>
+                <div class="col-12">
+                   <label for="vicePresident" class="form-label">Vice President Name:</label>
+                   <input type="vicePresident" class="form-control" id="vicePresident" name="vicePresident" placeholder="<%= club.vicePresident %>">
+                </div>
+                <div class="col-12">
+                   <label for="email" class="form-label">Email Adress:</label>
+                   <input type="email" class="form-control" id="email" name="email" placeholder="<%= club.email %>">
+                </div>
+                <div class="col-12">
+                  <label for="category" class="form-label">Category:</label>
+                  <input type="category" class="form-control" id="category" name="category" placeholder="<%= club.category %>">
+               </div>
+                <div class="col-12">
+                   <label for="about" class="col-sm-2 col-form-label">About:</label>
+                   <div class="col-sm-12">
+                      <textarea class="form-control" id="about" name="about" style="height: 200px"
+                         placeholder="<%= club.about %>"></textarea>
+                   </div>
+                </div>
+                <div class="text-end">
+                   <button type="submit" class="btn btn-primary">Send Request</button>
+                </div>
+             </form>
+             </p>
+          </div>
+       </div>
+    </div>
+ </div>
+ 
+ <div class="modal delete-club" id="delete-club" tabindex="-1">
+    <form method="post">
+    <div class="modal-dialog">
+       <div class="modal-content">
+          <div class="modal-body">
+             <h5>Are you sure to send a request to delete the club?</h5>
+          </div>
+          <div class="modal-footer">
+             <button type="submit" value="delete" name="button" class="btn btn-primary">Yes</button>
+             <button type="reset" class="btn btn-primary" data-bs-dismiss="modal">No</button>
+          </div>
+       </div>
+    </div>
+ </form>
+ </div>
+
+ 
+ 
+
+

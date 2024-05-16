@@ -1,0 +1,130 @@
+<aside id="sidebar" class="sidebar">
+    <ul class="sidebar-nav" id="sidebar-nav">
+        <% if(typeof notCollapsed!='undefined' && notCollapsed=="manager-dashboard" ){ %>
+            <li class="nav-item">
+                <a class="nav-link" href="/manager/dashboard">
+                    <i class="bi bi-grid-fill"></i>
+                    <span>Dashboard</span>
+                </a>
+            </li>
+            <% } else{ %>
+                <li class="nav-item">
+                    <a class="nav-link collapsed" href="/manager/dashboard">
+                        <i class="bi bi-grid-fill"></i>
+                        <span>Dashboard</span>
+                    </a>
+                </li>
+                <% } %>
+
+                    <% if(typeof notCollapsed!='undefined' && (notCollapsed=="manager-clubs" ||
+                        notCollapsed=="manager-club-single" ) ){ %>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/manager/clubs">
+                                <i class="bi bi-people-fill"></i>
+                                <span>Clubs</span>
+                            </a>
+                        </li>
+                        <% } else{ %>
+                            <li class="nav-item">
+                                <a class="nav-link collapsed" href="/manager/clubs">
+                                    <i class="bi bi-people-fill"></i>
+                                    <span>Clubs</span>
+                                </a>
+                            </li>
+                            <% } %>
+
+                                <% if(typeof notCollapsed!='undefined' && (notCollapsed=="manager-activities" ||
+                                    notCollapsed=="manager-activity-single" ) ){ %>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="/manager/activities">
+                                            <i class="bi bi-calendar-check-fill"></i>
+                                            <span>Activities</span>
+                                        </a>
+                                    </li>
+                                    <% } else{ %>
+                                        <li class="nav-item">
+                                            <a class="nav-link collapsed" href="/manager/activities">
+                                                <i class="bi bi-calendar-check-fill"></i>
+                                                <span>Activities</span>
+                                            </a>
+                                        </li>
+                                        <% } %>
+
+                                            <li class="nav-item">
+                                                <% if(typeof notCollapsed!='undefined' &&
+                                                    (notCollapsed=="manager-myclub" ||
+                                                    notCollapsed=="manager-myactivities" ||
+                                                    notCollapsed=="manager-myactivities-single" ) ){ %>
+                                                    <a class="nav-link" data-bs-target="#icons-nav"
+                                                        data-bs-toggle="collapse" href="#">
+                                                        <i class="bi bi-gear-fill"></i><span>Management</span><i
+                                                            class="bi bi-chevron-down ms-auto"></i>
+                                                    </a>
+                                                    <% } else{ %>
+                                                        <a class="nav-link collapsed" data-bs-target="#icons-nav"
+                                                            data-bs-toggle="collapse" href="#">
+                                                            <i class="bi bi-gear-fill"></i><span>Management</span><i
+                                                                class="bi bi-chevron-down ms-auto"></i>
+                                                        </a>
+                                                        <% } %>
+
+                                                            <% if(typeof notCollapsed!='undefined' &&
+                                                                (notCollapsed=="manager-myclub" ||
+                                                                notCollapsed=="manager-myactivities" ||
+                                                                notCollapsed=="manager-myactivities-single" ) ){ %>
+                                                                <ul id="icons-nav" class="nav-content"
+                                                                    data-bs-parent="#sidebar-nav">
+                                                                    <li>
+                                                                        <% if(typeof notCollapsed!='undefined' &&
+                                                                            (notCollapsed=="manager-myclub" ) ){ %>
+                                                                            <a href="/manager/myclub" class="active">
+                                                                                <i class="bi bi-circle-fill"></i><span>My
+                                                                                    Club</span>
+                                                                            </a>
+                                                                            <% } else{ %>
+                                                                                <a href="/manager/myclub">
+                                                                                    <i
+                                                                                        class="bi bi-circle-fill"></i><span>My
+                                                                                        Club</span>
+                                                                                </a>
+                                                                                <% } %>
+                                                                    </li>
+                                                                    <li>
+                                                                        <% if(typeof notCollapsed!='undefined' &&
+                                                                            (notCollapsed=="manager-myactivities" ||
+                                                                            notCollapsed=="manager-myactivities-single"
+                                                                            ) ){ %>
+                                                                            <a href="/manager/myactivities"
+                                                                                class="active">
+                                                                                <i class="bi bi-circle-fill"></i><span>My
+                                                                                    Activities</span>
+                                                                            </a>
+                                                                            <% } else{ %>
+                                                                                <a href="/manager/myactivities">
+                                                                                    <i
+                                                                                        class="bi bi-circle-fill"></i><span>My
+                                                                                        Activities</span>
+                                                                                </a>
+                                                                                <% } %>
+                                                                    </li>
+                                                                </ul>
+                                                                <% } else{ %>
+                                                                    <ul id="icons-nav" class="nav-content collapse"
+                                                                        data-bs-parent="#sidebar-nav">
+                                                                        <li>
+                                                                            <a href="/manager/myclub">
+                                                                                <i class="bi bi-circle-fill"></i><span>My
+                                                                                    Club</span>
+                                                                            </a>
+                                                                        </li>
+                                                                        <li>
+                                                                            <a href="/manager/myactivities">
+                                                                                <i class="bi bi-circle-fill"></i><span>My
+                                                                                    Activities</span>
+                                                                            </a>
+                                                                        </li>
+                                                                    </ul>
+                                                                    <% } %>
+                                            </li>
+    </ul>
+</aside>

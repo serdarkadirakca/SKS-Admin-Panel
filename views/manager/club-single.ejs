@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<%- include('../partials/head') %>
+
+    <body>
+        <%- include('../partials/header') %>
+            <%- include('../partials/manager-sidebar') %>
+
+                <main id="main" class="main">
+                    <div class="pagetitle">
+                        <h1>My Club</h1>
+                        <nav>
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item"><a href="/manager/dashboard">Home</a></li>
+                                <li class="breadcrumb-item active">My Club</li>
+                            </ol>
+                        </nav>
+                    </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-header d-flex">
+                            <div class="col-xxl-11">
+                                <h2><%= club.name %></h2>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <div class="card mb-3 mt-3">
+                                <div class="row g-0">
+                                    <div class="col-md-2 single-club">
+                                        <img src="../assets/img/club/<%= club.image %>" class="img-fluid rounded-start" alt="...">
+                                    </div>
+                                    <div class="col-md-10">
+                                        <div class="card-body">
+                                            <h5 class="card-title">About</h5>
+                                            <p class="card-text"><%= club.about %>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            <div class="card">
+                                <div class="row g-0 club-footer">
+                                    <div class="col-md-2">
+                                        <h4><u>President</u></h4>
+                                        <p><%= club.president %></p>
+                                    </div>
+                                    <div class="col-md-3">
+                                    </div>
+                                    <div class="col-md-2">
+                                        <h4><u>Vice President</u></h4>
+                                        <p><%= club.vicePresident %></p>
+                                    </div>
+                                    <div class="col-md-3">
+                                    </div>
+                                    <div class="col-md-2">
+                                        <h4><u>Email</u></h4>
+                                        <p><%= club.email %></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    </div>
+                    </div>
+                    </div>
+                    </div>
+                    </div>
+                </main>
+
+                <%- include('../partials/manager-modal-club') %>
+                    <%- include('../partials/footer') %>
+                        <%- include('../partials/script') %>
+    </body>
+
+    </html>

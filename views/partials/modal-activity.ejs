@@ -1,0 +1,140 @@
+<div class="modal signout" id="logout" tabindex="-1">
+   <div class="modal-dialog">
+      <div class="modal-content">
+         <div class="modal-body">
+            <h5>Are you sure to logout?</h5>
+         </div>
+         <div class="modal-footer">
+            <a href="/logout"><button type="button" class="btn btn-primary">Yes</button></a>
+            <button type="button" class="btn btn-primary" data-bs-dismiss="modal">No</button>
+         </div>
+      </div>
+   </div>
+</div>
+
+<div class="modal add-activity" id="add-activity" tabindex="-1">
+   <div class="modal-dialog">
+      <div class="modal-content">
+         <div class="modal-body">
+            <h5 style="text-align: center;"><b>Create a New Activity</b></h5>
+         </div>
+         <div class="modal-footer">
+            <form class="row g-3" method="post" enctype="multipart/form-data">
+               <div class="col-12">
+                  <label for="name" class="form-label">Activity Name:</label>
+                  <input type="name" class="form-control" id="name" name="name">
+               </div>
+               <div class="col-12">
+                  <label for="image" class="col-sm-3 col-form-label">Activity Picture</label>
+                  <div class="col-sm-12">
+                     <input class="form-control" type="file" id="image" name="image">
+                  </div>
+               </div>
+               <div class="col-12">
+                  <label for="date" class="form-label">Event Date:</label>
+                  <input type="date" class="form-control" id="date" name="date">
+               </div>
+               <div class="col-12">
+                  <label for="time" class="form-label">Event Time:</label>
+                  <input type="time" class="form-control" id="time" name="time">
+               </div>
+               <div class="col-12">
+                  <label for="place" class="form-label">Place:</label>
+                  <input type="place" class="form-control" id="place" name="place">
+               </div>
+               <div class="col-12">
+                  <label for="club">Club:</label>
+                  <select class="form-control" id="club" name="club">
+                     <option value="">Select Club</option>
+                     <% club.forEach(club => { %>
+                        <option value="<%= club._id %>"><%= club.name %></option>
+                     <% }) %>
+                  </select>
+               </div>
+               <div class="col-12">
+                  <label for="about" class="col-sm-2 col-form-label">About:</label>
+                  <div class="col-sm-12">
+                     <textarea class="form-control" id="about" name="about" style="height: 100px"></textarea>
+                  </div>
+               </div>
+               <div class="text-end">
+                  <button type="submit" class="btn btn-primary">Create</button>
+               </div>
+            </form>
+            </p>
+         </div>
+      </div>
+   </div>
+</div>
+
+<div class="modal edit-activity" id="edit-activity" tabindex="-1">
+   <div class="modal-dialog">
+      <div class="modal-content">
+         <div class="modal-body">
+            <h5 style="text-align: center;"><b>Edit Activity</b></h5>
+         </div>
+         <div class="modal-footer">
+            <form class="row g-3" method="post" enctype="multipart/form-data">
+               <div class="col-12">
+                  <label for="name" class="form-label">Activity Name:</label>
+                  <input type="name" class="form-control" id="name" name="name" placeholder="<%= activity.name %>">
+               </div>
+               <div class="col-12">
+                  <label for="picture" class="col-sm-3 col-form-label">Activity Picture</label>
+                  <div class="col-sm-12">
+                     <input class="form-control" type="file" id="image" name="image">
+                  </div>
+               </div>
+               <div class="col-12">
+                  <label for="date" class="form-label">Event Date:</label>
+                  <input type="date" class="form-control" id="date" name="date" placeholder="<%= activity.date %>">
+               </div>
+               <div class="col-12">
+                  <label for="time" class="form-label">Event Time:</label>
+                  <input type="time" class="form-control" id="time" name="time" placeholder="<%= activity.time %>">
+               </div>
+               <div class="col-12">
+                  <label for="place" class="form-label">Place:</label>
+                  <input type="place" class="form-control" id="place" name="place" placeholder="<%= activity.place %>">
+               </div>
+               <div class="col-12">
+                  <label for="club">Club:</label>
+                  <select class="form-control" id="club" name="club">
+                        <option value="">Select Club</option>
+                        <% club.forEach(club => { %>
+                        <option value="<%= club._id %>"><%= club.name %></option>
+                     <% }) %>
+                  </select>
+               </div>
+               <div class="col-12">
+                  <label for="about" class="col-sm-2 col-form-label">About:</label>
+                  <div class="col-sm-12">
+                     <textarea class="form-control" id="about" name="about" style="height: 200px"
+                        placeholder="<%= activity.about %>"></textarea>
+                  </div>
+               </div>
+               <div class="text-end">
+                  <button type="submit" name="button" value="edit" class="btn btn-primary">Update</button>
+               </div>
+            </form>
+            </p>
+         </div>
+      </div>
+   </div>
+</div>
+
+<div class="modal delete-activity" id="delete-activity" tabindex="-1">
+   <form method="post">
+   <div class="modal-dialog">
+      <div class="modal-content">
+         <div class="modal-body">
+            <h5>Are you sure to delete the activity?</h5>
+         </div>
+         <div class="modal-footer">
+            <button type="submit" value="delete" name="button" class="btn btn-primary">Yes</button>
+            <button type="reset" class="btn btn-primary" data-bs-dismiss="modal">No</button>
+         </div>
+      </div>
+   </div>
+</form>
+</div>

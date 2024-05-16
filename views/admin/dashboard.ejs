@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<%- include('../partials/head') %>
+
+   <body>
+      <%- include('../partials/header') %>
+         <%- include('../partials/sidebar') %>
+
+            <main id="main" class="main">
+               <div class="pagetitle">
+                  <h1>Dashboard</h1>
+                  <nav>
+                     <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="/admin/dashboard.html">Home</a></li>
+                     </ol>
+                  </nav>
+               </div>
+               <section class="section dashboard">
+                  <div class="row">
+                     <div class="col-lg-8">
+                        <div class="row">
+                           <div class="col-xxl-4 col-md-6">
+                              <div class="card info-card card1">
+                                 <div class="card-body">
+                                    <h5 class="card-title">Number of Clubs</h5>
+                                    <div class="d-flex align-items-center">
+                                       <div
+                                          class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                                          <i class="bi bi-people-fill"></i>
+                                       </div>
+                                       <div class="ps-3">
+                                          <h6><%= countClub %></h6>
+                                          <span>Clubs</span>
+                                       </div>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="col-xxl-4 col-md-6">
+                              <div class="card info-card card1">
+                                 <div class="card-body">
+                                    <h5 class="card-title">Number of Activities</h5>
+                                    <div class="d-flex align-items-center">
+                                       <div
+                                          class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                                          <i class="bi bi-calendar-check-fill"></i>
+                                       </div>
+                                       <div class="ps-3">
+                                          <h6><%= countActivity %></h6>
+                                          <span>Activities</span>
+                                       </div>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="col-xxl-4 col-md-12">
+                              <div class="card info-card card1">
+                                 <div class="card-body">
+                                    <h5 class="card-title">Registered Students</h5>
+                                    <div class="d-flex align-items-center">
+                                       <div
+                                          class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                                          <i class="bi bi-person-fill"></i>
+                                       </div>
+                                       <div class="ps-3">
+                                          <h6><%= countStudent %></h6>
+                                          <span>Students</span>
+                                       </div>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="col-12">
+                              <div class="card top-selling overflow-auto">
+                                 <div class="card-body pb-0">
+                                    <h5 class="card-title">Most Popular 5 Clubs</h5>
+                                    <table class="table table-borderless">
+                                       <thead>
+                                          <tr>
+                                             <th scope="col"></th>
+                                             <th scope="col">Club Name</th>
+                                             <th scope="col">President</th>
+                                             <th scope="col">Vice President</th>
+                                             <th scope="col" style="text-align: end;">Email</th>
+                                          </tr>
+                                       </thead>
+                                       <tbody>
+                                          <% clubList.forEach(clubList => { %>
+                                          <tr>
+                                             <th scope="row"><a href="#"><img src="../assets/img/<%= clubList.image %>" alt=""></a>
+                                             </th>
+                                             <td class="fw-bold"><%= clubList.name %></td>
+                                             <td class="fw-bold"><%= clubList.president %></td>
+                                             <td class="fw-bold"><%= clubList.vicePresident %></td>
+                                             <td class="fw-bold" style="text-align: end;"><%= clubList.email %></td>
+                                          </tr>
+                                          <% }) %>
+                                       </tbody>
+                                    </table>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="col-lg-4">
+                        <div class="col-12">
+                           <div class="card recent-sales overflow-auto">
+                              <div class="card-body">
+                                 <h5 class="card-title">Latest Requests</h5>
+                                 <table class="table table-borderless">
+                                    <thead>
+                                       <tr>
+                                          <th scope="col">From</th>
+                                          <th scope="col">Request</th>
+                                          <th scope="col">Status</th>
+                                       </tr>
+                                    </thead>
+                                    <tbody>
+                                       <% notificationList.forEach(notificationList => { %>
+                                          <tr>
+                                             <td><%= notificationList.from.name %></td>
+                                             <td><%= notificationList.request %></td>
+                                             <% if (notificationList.status=="Approved") { %>
+                                                <td><span class="badge bg-success">Approved</span></td>
+                                            <% }  else if(notificationList.status=="Rejected") { %>
+                                                <td><span class="badge bg-danger">Rejected</span></td>
+                                            <% }  else { %>
+                                                <td><span class="badge bg-warning">Pending</span></td>
+                                            <% } %> 
+                                          </tr>
+                                       <% }) %>
+                                    </tbody>
+                                 </table>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+               </section>
+            </main>
+            <%- include('../partials/modal') %>
+               <%- include('../partials/footer') %>
+                  <%- include('../partials/script') %>
+   </body>
+
+   </html>

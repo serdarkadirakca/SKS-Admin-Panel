@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<%- include('../partials/head') %>
+
+    <body>
+        <%- include('../partials/header') %>
+            <%- include('../partials/manager-sidebar') %>
+
+                <main id="main" class="main">
+                    <div class="d-flex top-clubs justify-content-between">
+                        <div class="pagetitle">
+                            <h1>Clubs</h1>
+                            <nav>
+                                <ol class="breadcrumb">
+                                    <li class="breadcrumb-item"><a href="/manager/dashboard">Home</a></li>
+                                    <li class="breadcrumb-item active">Clubs</li>
+                                </ol>
+                            </nav>
+                        </div>
+                        <div class="search-bar">
+                            <form class="search-form d-flex align-items-center justify-content-center" method="post">
+                                <input type="text" name="query" placeholder="Search" title="Enter search keyword">
+                                <button type="submit" title="Search"><i class="bi bi-search"></i></button>
+                            </form>
+                        </div>
+                    </div>
+                    <section class="section dashboard">
+                        <div class="col-xxl-12">
+                            <div class="row">
+                                <% club.forEach(club => { %>
+                                    <div class="col-xxl-2">
+                                        <a href="/manager/club<%= club._id %>">
+                                            <div class="club-card">
+                                                <img class="rounded-circle" src="../assets/img/club/<%= club.image %>">
+                                                <br>
+                                                <p>
+                                                    <%= club.name %>
+                                                </p>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <% }); %>
+                            </div>
+                        </div>
+                        <!-- <div class="club-pagination">
+                            <ul class="pagination">
+                                <li class="page-item active" aria-current="page"><span class="page-link">1</span>
+                                </li>
+                                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                            </ul>
+                            </nav>
+                        </div> -->
+                    </section>
+                </main>
+
+                <%- include('../partials/manager-modal-club') %>
+                    <%- include('../partials/footer') %>
+                        <%- include('../partials/script') %>
+    </body>
+
+    </html>

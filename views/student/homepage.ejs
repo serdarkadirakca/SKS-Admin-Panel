@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<%- include('../partials/head') %>
+
+    <body>
+        <%- include('../partials/student-header') %>
+
+            <main>
+                
+                <div class="icons">
+                    <section class="section dashboard">
+                        <div class="row">
+                            <h1 class="activities">Current Week Activities</h1>
+                            <div class="col-lg-12">
+                                <div class="row">
+                                    <% weekly.forEach(weekly => { %>
+                                        <div class="col-xxl-2 col-md-6">
+                                            <a href="/student/activity<%= weekly._id %>">
+                                                <div class="card-student">
+                                                    <img src="../assets/img/activity/<%= weekly.image %>" class="card-img-top">
+                                                    <div class="card-body0">
+                                                        <h5 class="card-title">
+                                                            <%= weekly.name %>
+                                                        </h5>
+                                                        <h6><%= weekly.date %></h6>
+                                                        <p>
+                                                            <%= weekly.about %>
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <% }); %>
+                                </div>
+                            </div>
+                            <div class="col-lg-12">
+                                <div class="row">
+                                </div>
+                            </div>
+                            <h1 class="activities">Recently Announced Activities</h1>
+                            <div class="col-lg-12">
+                                <div class="row">
+                                    <% announcedActivity.forEach(announcedActivity => { %>
+                                        <div class="col-xxl-2 col-md-6">
+                                            <a href="/student/activity<%= announcedActivity._id %>">
+                                                <div class="card-student">
+                                                    <img src="../assets/img/activity/<%= announcedActivity.image %>" class="card-img-top">
+                                                    <div class="card-body0">
+                                                        <h5 class="card-title">
+                                                            <%= announcedActivity.name %>
+                                                        </h5>
+                                                        <h6><%= announcedActivity.date %></h6>
+                                                        <p>
+                                                            <%= announcedActivity.about %>
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <% }); %>
+                                </div>
+                            </div>
+                            <form method="post">
+                            <div class="d-flex" style="justify-content: center;">
+                                <button type="submit" class="btn btn-primary">See more..</button>
+                            </div>
+                        </form>
+                        </div>
+                    </section>
+                </div>
+            </main>
+            <%- include('../partials/modal') %>
+                <%- include('../partials/footer') %>
+                    <%- include('../partials/script') %>
+    </body>
+
+    </html>
